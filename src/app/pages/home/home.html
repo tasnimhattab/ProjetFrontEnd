@@ -59,7 +59,7 @@
   <div class="conference-grid">
     @for (conf of list; track conf.title)
     {
-      @if (searchTitle==conf.title || searchTitle==null)
+      @if (!searchTitle || conf.title.toLowerCase().includes(searchTitle.toLowerCase()))
     {
         <div class="conference-card">
           <!-- Conference Image -->
