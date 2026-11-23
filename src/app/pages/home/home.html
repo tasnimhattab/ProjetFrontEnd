@@ -1,4 +1,119 @@
-<h1>{{title}}</h1>
-<button class= "btn btn-sm btn-primary" (click)="change()" [hidden]="state"> <!--disabled-->
-change
-</button>
+<!--
+
+<input  type="text" name="search" class="form-control" placeholder="search by title"
+        [(ngModel)]="searchTitle" >
+&lt;!&ndash;<h1>{{searchTitle}}</h1>&ndash;&gt;
+
+<table class="table">
+  <tr>
+    <th>title</th>
+    <th>date</th>
+    <th>Availavle places</th>
+    <th>Participate</th>
+  </tr>
+  &lt;!&ndash;directive Angular&ndash;&gt;
+  @for (conf of list; track conf.title)
+  {
+    @if (searchTitle==conf.title || searchTitle==null)
+    {
+    <tr>
+      &lt;!&ndash;data bindig: interpolation avec {{}} &ndash;&gt;
+      <td>{{conf.title |uppercase}}</td>
+      <td>{{conf.date}}</td>
+      <td>{{conf.nbMax - conf.nbResrvation}}</td>
+      &lt;!&ndash;data binding / property binding[property]="variable" event binding (event)="action()"
+      Two way binding -> fromulaire
+      &ndash;&gt;
+      <td> <button class="btn btn-small" [disabled]="conf.nbMax==conf.nbResrvation" (click)="participate(conf)"  > Participate </button> </td>
+    </tr>
+    }
+&lt;!&ndash;    @else
+    {
+      <tr>
+        <td>conference does not exist</td>
+      </tr>
+    }&ndash;&gt;
+  }
+
+</table>
+-->
+
+
+
+<div class="conference-page">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Discover Conferences</h1>
+    <p>Explore upcoming events and find the ones that interest you.</p>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input  type="text" name="search" class="form-control" placeholder="search by title"
+            [(ngModel)]="searchTitle" >
+    <!--<h1>{{searchTitle}}</h1>-->
+  </div>
+
+  <!-- Conference Cards -->
+  <div class="conference-grid">
+    @for (conf of list; track conf.title)
+    {
+      @if (searchTitle==conf.title || searchTitle==null)
+    {
+        <div class="conference-card">
+          <!-- Conference Image -->
+          <div class="card-image">
+            <img [src]="conf.picture" [alt]="conf.title">
+            <span class="card-category">CONFERENCE</span>
+          </div>
+          <!-- Card Content -->
+          <div class="card-content">
+            <h3>{{conf.title | uppercase}}</h3>
+            <p class="description">
+              {{conf.description}}
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <span>{{conf.date}}</span>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-icon">👥</span>
+                <span>
+                  {{conf.nbMax - conf.nbResrvation}} places available
+                </span>
+              </div>
+            </div>
+            <!-- Availability -->
+            <div class="availability">
+              @if (conf.nbMax == conf.nbResrvation) {
+                <span class="status full">Fully booked</span>
+              }
+              @else {
+                <span class="status available">Places available</span>
+              }
+            </div>
+            <!-- Participate Button -->
+            <button
+              class="participate-btn"
+              [disabled]="conf.nbMax == conf.nbResrvation"
+              (click)="participate(conf)">
+              @if (conf.nbMax == conf.nbResrvation) {
+                Fully Booked
+              }
+              @else {
+                Participate Now →
+              }
+            </button>
+          </div>
+        </div>
+
+      }
+
+    }
+
+  </div>
+
+</div>
