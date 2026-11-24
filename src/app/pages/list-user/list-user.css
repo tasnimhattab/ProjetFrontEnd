@@ -1,0 +1,209 @@
+
+/* Main Page */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f7fc;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.user-page {
+  padding: 45px 7%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+/* Header */
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #26334a;
+  margin-bottom: 10px;
+}
+
+/* General Cards */
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #edf0f5;
+  box-shadow: 0 4px 15px rgba(35, 48, 80, 0.05);
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(35, 48, 80, 0.12);
+}
+
+/* Card Icons */
+.card-icon {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/* Profile */
+.profile-card {
+  border-left: 4px solid #5368c5;
+}
+
+.profile-icon {
+  background: #eef0fc;
+}
+
+/* Friends */
+.friends-card {
+  border-left: 4px solid #5368c5;
+}
+
+.friends-icon {
+  background: #eef0fc;
+}
+
+/* Notifications */
+.notifications-card {
+  border-left: 4px solid #5368c5;
+}
+
+.notifications-icon {
+  background: #eef0fc;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-content h2 {
+  color: #293653;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+.card-content p {
+  color: #6c757d;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Friend Inputs */
+.friend-inputs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.friend-inputs input {
+  width: 190px;
+  padding: 12px 15px;
+  border: 1px solid #e1e5ee;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: 0.3s;
+}
+
+.friend-inputs input:focus {
+  border-color: #6578d6;
+  box-shadow: 0 0 0 4px rgba(101, 120, 214, 0.12);
+  outline: none;
+}
+
+/* Friends List */
+.friends-list {
+  padding-left: 22px;
+  margin: 10px 0 0;
+  color: #5e6a7e;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Notifications Button */
+.notification-btn {
+  background: #5368c5;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  margin-top: 8px;
+}
+
+.notification-btn:hover {
+  background: #3e52ad;
+  box-shadow: 0 4px 12px rgba(83, 104, 197, 0.2);
+}
+
+/* Notification List */
+.notification-list {
+  margin-top: 18px;
+  padding: 15px 15px 15px 35px;
+  background: #f5f7fc;
+  border-radius: 10px;
+  color: #5e6a7e;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .friend-inputs {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 650px) {
+  .user-page {
+    padding: 30px 18px;
+  }
+
+  .page-header h1 {
+    font-size: 25px;
+  }
+
+  .info-card {
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .card-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 23px;
+  }
+
+  .card-content h2 {
+    font-size: 19px;
+  }
+
+  .friend-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .friend-inputs input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

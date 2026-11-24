@@ -1,0 +1,72 @@
+<div class="user-page">
+
+  <div class="page-header">
+    <h1>Users</h1>
+  </div>
+  <!-- Profil utilisateur -->
+  <div class="info-card profile-card">
+    <div class="card-icon profile-icon">
+      👤
+    </div>
+    <div class="card-content">
+      <h2>Profil utilisateur</h2>
+      @for (user of list; track user.username) {
+        <p><strong>Nom :</strong> {{user.username}}</p>
+        <p><strong>Email :</strong> {{user.email}}</p>
+      }
+    </div>
+  </div>
+
+  <!-- Liste des amis -->
+  <div class="info-card friends-card">
+    <div class="card-icon friends-icon">
+      👥
+    </div>
+    <div class="card-content">
+      <h2>Liste des amis</h2>
+      <div class="friend-inputs">
+        <input type="text" [(ngModel)]="friend1">
+        <input type="text" [(ngModel)]="friend2">
+        <input type="text" [(ngModel)]="friend3">
+      </div>
+      <ul class="friends-list">
+        @for (friend of friends; track friend) {
+          <li>{{friend}}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <!-- Zone de notifications -->
+  <div class="info-card notifications-card">
+    <div class="card-icon notifications-icon">
+      🔔
+    </div>
+    <div class="card-content">
+      <h2>Zone de notifications</h2>
+      <p>
+        Vous avez {{notifications.length}} nouvelles notifications.
+      </p>
+
+      <button
+        class="notification-btn"
+        (click)="afficherNotifications()">
+        @if (showNotifications) {
+          Masquer les notifications
+        }
+        @else {
+          Afficher les notifications
+        }
+      </button>
+      @if (showNotifications) {
+        <ul class="notification-list">
+          @for (notification of notifications; track notification) {
+            <li>{{notification}}</li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</div>
+
+

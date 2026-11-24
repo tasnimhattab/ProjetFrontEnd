@@ -1,5 +1,6 @@
+/*
 
-/* Main Page */
+!* Main Page *!
 :host {
   display: block;
   min-height: 100vh;
@@ -13,7 +14,7 @@
   margin: auto;
 }
 
-/* Header */
+!* Header *!
 .page-header {
   margin-bottom: 30px;
 }
@@ -30,7 +31,7 @@
   font-size: 15px;
 }
 
-/* Search */
+!* Search *!
 .search-container {
   max-width: 450px;
   margin-bottom: 35px;
@@ -52,14 +53,14 @@
   outline: none;
 }
 
-/* Cards Grid */
+!* Cards Grid *!
 .conference-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
 }
 
-/* Conference Card */
+!* Conference Card *!
 .conference-card {
   background: white;
   border-radius: 15px;
@@ -74,7 +75,7 @@
   box-shadow: 0 12px 30px rgba(35, 48, 80, 0.12);
 }
 
-/* Image */
+!* Image *!
 .card-image {
   height: 190px;
   position: relative;
@@ -106,7 +107,7 @@
   letter-spacing: 1px;
 }
 
-/* Card Content */
+!* Card Content *!
 .card-content {
   padding: 23px;
 }
@@ -126,7 +127,7 @@
   margin-bottom: 20px;
 }
 
-/* Details */
+!* Details *!
 .card-details {
   border-top: 1px solid #edf0f5;
   border-bottom: 1px solid #edf0f5;
@@ -146,7 +147,7 @@
   font-size: 16px;
 }
 
-/* Availability */
+!* Availability *!
 .availability {
   margin-top: 17px;
   margin-bottom: 18px;
@@ -169,7 +170,7 @@
   color: #dc3545;
 }
 
-/* Button */
+!* Button *!
 .participate-btn {
   width: 100%;
   padding: 12px;
@@ -194,7 +195,7 @@
   cursor: not-allowed;
 }
 
-/* Responsive */
+!* Responsive *!
 @media (max-width: 1000px) {
   .conference-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -214,3 +215,4 @@
     grid-template-columns: 1fr;
   }
 }
+*/

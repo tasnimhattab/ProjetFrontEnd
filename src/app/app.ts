@@ -4,11 +4,13 @@ import { Footer } from './sharedComponents/footer/footer';
 import { Header } from './sharedComponents/header/header';
 import { Home } from './pages/home/home';
 import { ListConf } from './pages/list-conf/list-conf';
+import { ListUser } from './pages/list-user/list-user';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Header, Home, ListConf],
+  imports: [RouterOutlet, Footer, Header, Home, ListConf,ListUser],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
